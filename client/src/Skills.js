@@ -17,7 +17,7 @@ export default function Skills() {
     <>
       <div className={classes.root}>
         <Typography component="h1" variant="h3" align="center" className={classes.color} gutterBottom>
-          My Skills as Circular
+          My Skills
         </Typography>
       </div>
       <Toolbar style={{ marginTop: '"0px' }} className={classes.toolbar} ></Toolbar>
