@@ -16,7 +16,7 @@ const blogPosts = [
   {
     title: 'Hotel Website',
     description:
-      'Hotel Website designed in a Full Html/Css. The very first project i start.',
+      'Hotel Website designed in a Full Html/Css. The very first project i did',
   },
   // {
   //   title: 'Blog (React and Material UI)',
@@ -43,7 +43,6 @@ const App = () => {
     </>
   );
 }
-
 export default App;
 
 

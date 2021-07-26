@@ -1,4 +1,4 @@
-import { Button, Drawer, Grid, IconButton, Link, List, ListItem, Paper, Toolbar, Typography } from "@material-ui/core";
+import { Button, Drawer, Grid, IconButton, List, ListItem, Paper, Toolbar, Typography } from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import FacebookIcon from '@material-ui/icons/Facebook';
@@ -32,7 +32,6 @@ const useStyles = makeStyles((theme) => ({
     color: 'black',
     flexGrow: 1,
     padding: '0px',
-    margin: '0px 15px 0px 70px',
     fontSize: '40px'
   },
   title: {
@@ -75,8 +74,9 @@ const useStyles = makeStyles((theme) => ({
     color: 'black',
     cursor: 'pointer'
   },
-  link: {
-    display: 'none'
+  button: {
+    alignContent: 'left',
+    backgroundColor: 'red'
   }
 }));
 
@@ -99,8 +99,8 @@ export default function Header(props) {
         <Button >Home</Button>
         <Button >Projects</Button>
         <Button >Skills</Button>
-        <Button>Contact</Button>
-        <Typography variant='h3' align="center" className={classes.typography} >
+        <Button >Hobbies</Button>
+        <Typography variant='h3' className={classes.typography} align='center'>
           {title}
         </Typography >
         <IconButton className={classes.iconButton} onClick={handleClick}>
@@ -128,7 +128,6 @@ export default function Header(props) {
       </Toolbar>
 
 
-
       <Paper className={classes.main} style={{
         backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/Achour.jpg'})`
       }} >
@@ -137,12 +136,12 @@ export default function Header(props) {
             <Typography className={classes.typoTitle} component="h1" variant="h4" color="inherit" gutterBottom>
               Hi, I'm Achour and Welcome to my Universe
             </Typography>
-
           </Grid>
-          <Link className={classes.link} variant="subtitle2" color="inherit" href="#" onClick={() => {
+
+          <Button className={classes.link} aling="center" onClick={() => {
             alert('Hello World')
           }}>
-            Send me a Message...</Link>
+            Send me a Message...</Button>
         </div>
       </Paper>
     </>
