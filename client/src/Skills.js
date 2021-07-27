@@ -6,7 +6,7 @@ function LinearProgressWithLabel(props) {
   return (
     <Container style={{ marginTop: '20px' }}>
       <Typography component='h6'>
-        HTML/CSS
+        {props.languages}
       </Typography>
       <Box display="flex" alignItems="center">
         <Box width="100%" mr={1}>
@@ -37,21 +37,22 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Skills() {
   const classes = useStyles();
-
   const [progress, setProgress] = useState(0);
   React.useEffect(() => {
     const timer = setInterval(() => {
-      setProgress((prevProgress) => (prevProgress >= 80 ? 10 : prevProgress + 10));
-    }, 800);
+      setProgress((prevProgress) => (prevProgress >= 80 ? 0 : prevProgress + 80));
+    }, 2000);
     return () => {
       clearInterval(timer);
     };
   }, []);
+
+
   const [progress1, setProgress1] = useState(0);
   React.useEffect(() => {
     const timer = setInterval(() => {
-      setProgress1((prevProgress) => (prevProgress >= 80 ? 10 : prevProgress + 10));
-    }, 800);
+      setProgress1((prevProgress) => (prevProgress >= 40 ? 0 : prevProgress + 40));
+    }, 2000);
     return () => {
       clearInterval(timer);
     };
@@ -59,8 +60,8 @@ export default function Skills() {
   const [progress2, setProgress2] = useState(0);
   React.useEffect(() => {
     const timer = setInterval(() => {
-      setProgress2((prevProgress) => (prevProgress >= 80 ? 10 : prevProgress + 10));
-    }, 800);
+      setProgress2((prevProgress) => (prevProgress >= 50 ? 0 : prevProgress + 50));
+    }, 2000);
     return () => {
       clearInterval(timer);
     };
@@ -78,9 +79,9 @@ export default function Skills() {
 
       <Container>
         <div className={classes.rootLinear}>
-          <LinearProgressWithLabel value={progress} />
-          <LinearProgressWithLabel value={progress1} />
-          <LinearProgressWithLabel value={progress2} />
+          <LinearProgressWithLabel value={progress} languages='HTML/CSS' />
+          <LinearProgressWithLabel value={progress1} languages='JAVASCRIPT' />
+          <LinearProgressWithLabel value={progress2} languages='REACT' />
         </div>
       </Container>
     </>
