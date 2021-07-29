@@ -8,7 +8,7 @@ import React from 'react';
 const useStyles = makeStyles((theme) => ({
   description: {
     position: 'relative',
-    top: '100px',
+    top: '80px',
   },
   toolbar: {
     borderBottom: `1px solid ${theme.palette.divider}`,

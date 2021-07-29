@@ -19,10 +19,10 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: '500px,cover',
     backgroundPosition: 'right ',
     backgroundAttachment: 'local',
-    top: '40px',
+    top: '30px',
     [theme.breakpoints.down('xs')]: {
       backgroundSize: '550px, contain',
-      backgroundPosition: 'center '
+      backgroundPosition: 'center'
     }
   },
   toolbar: {
@@ -84,6 +84,11 @@ const useStyles = makeStyles((theme) => ({
       position: 'relative',
       top: '320px'
     }
+  },
+  buttonSize: {
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '12px'
+    }
   }
 
 }));
@@ -104,14 +109,14 @@ export default function Header(props) {
     <>
       <Toolbar className={classes.toolbar}>
         <div className={classes.button}>
-          <Button >Home</Button>
-          <Button >Projects</Button>
-          <Button >Skills</Button>
-          <Button >Hobbies</Button>
+          <Button className={classes.buttonSize}>Home</Button>
+          <Button className={classes.buttonSize} >Projects</Button>
+          <Button className={classes.buttonSize}>Skills</Button>
+          <Button className={classes.buttonSize}>Hobbies</Button>
         </div>
 
         <IconButton className={classes.iconButton} onClick={handleClick} >
-          <MenuIcon className={classes.menuIcon} />
+          <MenuIcon align='right' className={classes.menuIcon} />
         </IconButton>
 
         <Drawer anchor='right' open={openDrawer} transitionDuration={0} className={classes.drawer}>

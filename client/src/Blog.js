@@ -54,7 +54,7 @@ export default function Blog(props) {
                   height="150"
                   image="assets/Portfolio.png"
                   title="Portfolio"
-                  onClick={() => { alert('Hello') }}
+                  onClick={() => { alert('Please click on Demo to check my work') }}
                 />
                 <CardContent style={{ padding: '10px' }}>
                   <Typography gutterBottom variant="h6" component="h2" className={classes.typoTitle}>{
@@ -98,6 +98,7 @@ export default function Blog(props) {
                   height="150"
                   image="assets/hotel.PNG"
                   title="hotel"
+                  onClick={() => { alert('Please click on Demo to check my work') }}
                 />
                 <CardContent style={{ padding: '10px' }}>
                   <Typography gutterBottom variant="h6" component="h2" className={classes.typoTitle}>
