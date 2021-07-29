@@ -40,7 +40,7 @@ export default function Skills() {
   const [progress, setProgress] = useState(0);
   React.useEffect(() => {
     const timer = setInterval(() => {
-      setProgress((prevProgress) => (prevProgress >= 80 ? 0 : prevProgress + 80));
+      setProgress((prevProgress) => (prevProgress >= 60 ? 0 : prevProgress + 60));
     }, 2000);
     return () => {
       clearInterval(timer);

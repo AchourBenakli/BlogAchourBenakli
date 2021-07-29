@@ -27,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
   toolbar: {
     borderBottom: `1px solid ${theme.palette.divider}`,
+    flexGrow: 1,
   },
   typography: {
     color: 'black',
@@ -75,14 +76,20 @@ const useStyles = makeStyles((theme) => ({
     cursor: 'pointer'
   },
   button: {
-    alignContent: 'left',
-    backgroundColor: 'red'
+    flexGrow: 1,
+  },
+  link: {
+    [theme.breakpoints.down('xs')]: {
+      color: 'white',
+      position: 'relative',
+      top: '320px'
+    }
   }
+
 }));
 
 export default function Header(props) {
   const classes = useStyles();
-  const { title } = props;
   const [openDrawer, setOpenDrawer] = React.useState(false);
 
   const handleClick = () => {
@@ -96,16 +103,17 @@ export default function Header(props) {
   return (
     <>
       <Toolbar className={classes.toolbar}>
-        <Button >Home</Button>
-        <Button >Projects</Button>
-        <Button >Skills</Button>
-        <Button >Hobbies</Button>
-        <Typography variant='h3' className={classes.typography} align='center'>
-          {title}
-        </Typography >
-        <IconButton className={classes.iconButton} onClick={handleClick}>
+        <div className={classes.button}>
+          <Button >Home</Button>
+          <Button >Projects</Button>
+          <Button >Skills</Button>
+          <Button >Hobbies</Button>
+        </div>
+
+        <IconButton className={classes.iconButton} onClick={handleClick} >
           <MenuIcon className={classes.menuIcon} />
         </IconButton>
+
         <Drawer anchor='right' open={openDrawer} transitionDuration={0} className={classes.drawer}>
           <ChevronRightIcon anchor='right' open={openDrawer} onClick={handleClose} className={classes.close}></ChevronRightIcon>
           <List className={classes.List} >
@@ -138,8 +146,9 @@ export default function Header(props) {
             </Typography>
           </Grid>
 
-          <Button className={classes.link} aling="center" onClick={() => {
-            alert('Hello World')
+          <Button className={classes.link} align="center" onClick={(e) => {
+            e.preventDefault(e);
+            window.open('http://achour.tmmz3250.odns.fr/Contact', '_blank')
           }}>
             Send me a Message...</Button>
         </div>

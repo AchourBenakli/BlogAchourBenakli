@@ -32,7 +32,7 @@ const App = () => {
     <>
       <CssBaseline />
       <Container maxWidth="lg">
-        <Header title="Blog" />
+        <Header />
         <Presentation />
         <Container justify="center" style={{ marginTop: '20px', marginBottom: '150px' }} >
           <Blog post={blogPosts} />
