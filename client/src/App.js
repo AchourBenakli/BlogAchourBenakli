@@ -1,9 +1,13 @@
 import { Container, CssBaseline } from "@material-ui/core";
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Route
+} from 'react-router-dom';
 import Blog from './Blog';
 import Footer from "./Footer";
 import Header from './Header';
-import Presentation from './Presentation';
+import Presentation from "./Presentation";
 import Skills from "./Skills";
 
 
@@ -18,30 +22,46 @@ const blogPosts = [
     description:
       'Hotel Website designed in a Full Html/Css. The very first project i did',
   },
-  // {
-  //   title: 'Blog (React and Material UI)',
-  //   description:
-  //     'Current Project. Using Material UI and React, Im still developping new features.',
-  // },
 ];
 
 
+// const App = () => {
+//   return (
+//     <>
+//       <CssBaseline />
+//       <Container maxWidth="lg">
+//         <Header />
+//         <Presentation />
+//         <Container justify="center" style={{ marginTop: '20px', marginBottom: '150px' }} >
+//           <Blog post={blogPosts} />
+//         </Container>
+//         <Skills />
+//       </Container>
+//       <Footer />
+//     </>
+//   );
+// }
+
+
 const App = () => {
-  // const classes = useStyles();
   return (
     <>
-      <CssBaseline />
-      <Container maxWidth="lg">
-        <Header />
-        <Presentation />
-        <Container justify="center" style={{ marginTop: '20px', marginBottom: '150px' }} >
-          <Blog post={blogPosts} />
+      <Router>
+
+        <CssBaseline />
+        <Container maxWidth="lg">
+          <Route path="/" component={Header} exact />
+          <Container justify="center" style={{ marginTop: '20px', marginBottom: '150px' }} >
+            <Presentation />
+            <Route path="/Blog" component={Blog} post={blogPosts} />
+          </Container>
+          <Route path="/Skills" component={Skills} />
         </Container>
-        <Skills />
-      </Container>
-      <Footer />
+        <Footer />
+
+      </Router>
     </>
-  );
+  )
 }
 export default App;
 

@@ -38,7 +38,7 @@ const useStyles = makeStyles(theme => ({
   //   }
   // },
 }));
-export default function Blog(props) {
+function Blog(props) {
   const classes = useStyles();
   const { post } = props;
   return (
@@ -180,6 +180,8 @@ Blog.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
 };
+
+export default Blog;
 
 
 

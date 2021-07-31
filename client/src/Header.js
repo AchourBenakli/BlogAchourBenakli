@@ -93,7 +93,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export default function Header(props) {
+function Header(props) {
   const classes = useStyles();
   const [openDrawer, setOpenDrawer] = React.useState(false);
 
@@ -166,5 +166,6 @@ Header.propTypes = {
   title: PropTypes.string,
 };
 
+export default Header
 
 
