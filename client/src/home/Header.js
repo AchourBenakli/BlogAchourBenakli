@@ -29,6 +29,10 @@ const useStyles = makeStyles((theme) => ({
   toolbar: {
     borderBottom: `1px solid ${theme.palette.divider}`,
     flexGrow: 1,
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '10px',
+      paddingLeft: '0px'
+    }
   },
   typography: {
     color: 'black',
@@ -88,7 +92,8 @@ const useStyles = makeStyles((theme) => ({
   },
   buttonSize: {
     [theme.breakpoints.down('xs')]: {
-      fontSize: '12px'
+      fontSize: '10px',
+      minWidth: '0px'
     }
   }
 
