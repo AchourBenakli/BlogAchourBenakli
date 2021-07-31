@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import GitHubIcon from '@material-ui/icons/GitHub';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import MenuIcon from '@material-ui/icons/Menu';
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -110,7 +111,7 @@ function Header(props) {
       <Toolbar className={classes.toolbar}>
         <div className={classes.button}>
           <Button className={classes.buttonSize}>Home</Button>
-          <Button className={classes.buttonSize} >Crypto</Button>
+          <Button className={classes.buttonSize} >Dashboard</Button>
           <Button className={classes.buttonSize}>Market</Button>
           <Button className={classes.buttonSize}>Subscription</Button>
         </div>
@@ -137,12 +138,20 @@ function Header(props) {
               }}></FacebookIcon>
             </ListItem>
           </List>
+          <List className={classes.List} >
+            <ListItem className={classes.ListItem}>
+              <LinkedInIcon onClick={(e) => {
+                e.preventDefault(e);
+                window.open('https://www.linkedin.com/in/achour-benakli-280231100/', '_blank')
+              }}></LinkedInIcon>
+            </ListItem>
+          </List>
         </Drawer>
       </Toolbar>
 
 
       <Paper className={classes.main} style={{
-        backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/Achour.jpg'})`
+        backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/achour2.jpeg'})`
       }} >
         <div className={classes.title}>
           <Grid item md={6} container wrap="nowrap" >
