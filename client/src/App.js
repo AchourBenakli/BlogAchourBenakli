@@ -1,14 +1,10 @@
 import { Container, CssBaseline } from "@material-ui/core";
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Route
-} from 'react-router-dom';
-import Blog from './Blog';
 import Footer from "./Footer";
-import Header from './Header';
-import Presentation from "./Presentation";
-import Skills from "./Skills";
+import Blog from './home/Blog';
+import Header from './home/Header';
+import Presentation from "./home/Presentation";
+import Skills from "./home/Skills";
 
 
 const blogPosts = [
@@ -25,44 +21,43 @@ const blogPosts = [
 ];
 
 
+const App = () => {
+  return (
+    <>
+      <CssBaseline />
+      <Container maxWidth="lg">
+        <Header />
+        <Presentation />
+        <Container justify="center" style={{ marginTop: '20px', marginBottom: '150px' }} >
+          <Blog post={blogPosts} />
+        </Container>
+        <Skills />
+      </Container>
+
+      <Footer />
+    </>
+  );
+}
+
+
 // const App = () => {
 //   return (
 //     <>
 //       <CssBaseline />
 //       <Container maxWidth="lg">
-//         <Header />
-//         <Presentation />
-//         <Container justify="center" style={{ marginTop: '20px', marginBottom: '150px' }} >
-//           <Blog post={blogPosts} />
-//         </Container>
-//         <Skills />
+//         <Router>
+//           <Link path="/" component={Header} exact />
+//           <Presentation />
+//           {/* <Container justify="center" style={{ marginTop: '20px', marginBottom: '150px' }} /> 
+//           </Container> */}
+//           <Link path="/Blog" component={Blog} post={blogPosts} />
+//           <Link path="/Skills" component={Skills} />
+//         </Router>
+//         <Footer />
 //       </Container>
-//       <Footer />
 //     </>
-//   );
+//   )
 // }
-
-
-const App = () => {
-  return (
-    <>
-      <Router>
-
-        <CssBaseline />
-        <Container maxWidth="lg">
-          <Route path="/" component={Header} exact />
-          <Container justify="center" style={{ marginTop: '20px', marginBottom: '150px' }} >
-            <Presentation />
-            <Route path="/Blog" component={Blog} post={blogPosts} />
-          </Container>
-          <Route path="/Skills" component={Skills} />
-        </Container>
-        <Footer />
-
-      </Router>
-    </>
-  )
-}
 export default App;
 
 

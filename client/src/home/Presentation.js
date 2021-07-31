@@ -3,12 +3,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import React from 'react';
 
 
-
-
 const useStyles = makeStyles((theme) => ({
   description: {
     position: 'relative',
-    top: '80px',
+    top: '100px',
   },
   toolbar: {
     borderBottom: `1px solid ${theme.palette.divider}`,

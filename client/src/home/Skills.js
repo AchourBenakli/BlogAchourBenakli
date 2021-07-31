@@ -66,22 +66,32 @@ export default function Skills() {
       clearInterval(timer);
     };
   }, []);
+  const [progress3, setProgress3] = useState(0);
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setProgress3((prevProgress) => (prevProgress >= 50 ? 0 : prevProgress + 50));
+    }, 2000);
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
 
 
   return (
     <>
-      <div className={classes.root}>
+      <div className={classes.root}  >
         <Typography component="h1" variant="h3" align="center" className={classes.color} gutterBottom>
           My Skills
         </Typography>
       </div>
       <Toolbar style={{ marginTop: '"0px' }} className={classes.toolbar} ></Toolbar>
 
-      <Container>
+      <Container style={{ marginBottom: '100px', marginTop: '80px' }} >
         <div className={classes.rootLinear}>
           <LinearProgressWithLabel value={progress} languages='HTML/CSS' />
           <LinearProgressWithLabel value={progress1} languages='JAVASCRIPT' />
           <LinearProgressWithLabel value={progress2} languages='REACT' />
+          <LinearProgressWithLabel value={progress3} languages='MATERIAL-UI' />
         </div>
       </Container>
     </>
