@@ -116,7 +116,7 @@ function Header(props) {
       <Toolbar className={classes.toolbar}>
         <div className={classes.button}>
           <Button className={classes.buttonSize}>Home</Button>
-          <Button className={classes.buttonSize} >Dashboard</Button>
+          <Button className={classes.buttonSize} >My App</Button>
           <Button className={classes.buttonSize}>Market</Button>
           <Button className={classes.buttonSize}>Subscription</Button>
         </div>

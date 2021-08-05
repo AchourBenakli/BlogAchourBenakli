@@ -1,10 +1,10 @@
 import { Container, CssBaseline } from "@material-ui/core";
 import React from 'react';
 import Footer from "./Footer";
-import Blog from './home/Blog';
-import Header from './home/Header';
-import Presentation from "./home/Presentation";
-import Skills from "./home/Skills";
+import Blog from './Home/Blog';
+import Header from './Home/Header';
+import Presentation from "./Home/Presentation";
+import Skills from "./Home/Skills";
 
 
 const blogPosts = [
