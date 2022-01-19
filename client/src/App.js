@@ -33,7 +33,6 @@ const App = () => {
         </Container>
         <Skills />
       </Container>
-
       <Footer />
     </>
   );
